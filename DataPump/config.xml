@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+	<datasource>
+		<!-- 源数据源的配置的 -->
+		<origin>
+			  <property name="driver" value="com.mysql.jdbc.Driver"/>
+              <property name="url" value="jdbc:mysql://114.215.80.164:3306/website"/>
+              <property name="username" value="website"/>
+              <property name="password" value="website"/>
+		</origin>
+		<!-- 目标数据源的配置 -->
+		<target>
+			  <property name="driver" value="com.mysql.jdbc.Driver"/>
+              <property name="url" value="jdbc:mysql://localhost:3306/website"/>
+              <property name="username" value="root"/>
+              <property name="password" value="12345678"/>
+		</target>
+	</datasource>
+
+	<tables>
+		<!-- 表映射 oriname数据源数据表   tarname目标数据表-->
+		<table oriname="ACCESSLOGS" tarname="ACCESSLOGS">
+			<!-- 映射，name为现数据表中的字段，值为源数据源中的字段，不需要映射的不需要配置，id字段不要设置成自动增长否则映射的时候插入出现错误 -->
+			<mapping name="id">id</mapping>
+			<mapping name="ip">ip</mapping>
+			<mapping name="datetime">datetime</mapping>
+			<mapping name="country">country</mapping>
+			<mapping name="area">area</mapping>
+			<mapping name="city">city</mapping>
+		</table>
+		<table oriname="ACCESSLOGTEMP" tarname="ACCESSLOGTEMP">
+			<!-- 映射，name为现数据表中的字段，值为源数据源中的字段，不需要映射的不需要配置 -->
+			<mapping name="id_temp">id</mapping>
+			<mapping name="ip_temp">ip_temp</mapping>
+			<mapping name="datetime_temp">datetime_temp</mapping>
+			<mapping name="country_temp">country_temp</mapping>
+			<mapping name="area_temp">area_temp</mapping>
+			<mapping name="city_temp">city_temp</mapping>
+		</table>
+		<table oriname="ARTICLE" tarname="ARTICLE">
+			<!-- 映射，name为现数据表中的字段，值为源数据源中的字段，不需要映射的不需要配置 -->
+			<mapping name="id">id</mapping>
+			<mapping name="title">title</mapping>
+			<mapping name="remark">remark</mapping>
+			<mapping name="datetime">datetime</mapping>
+			<mapping name="author">author</mapping>
+			<mapping name="source">source</mapping>
+			<mapping name="keyword">keyword</mapping>
+			<mapping name="type">type</mapping>
+			<mapping name="coverimage">coverimage</mapping>
+			<mapping name="coverupname">coverupname</mapping>
+			<mapping name="coverupsize">coverupsize</mapping>
+			<mapping name="isshowtitle">isshowtitle</mapping>
+			<mapping name="content">content</mapping>
+			<mapping name="state">state</mapping>
+			<mapping name="caid">caid</mapping>
+			<mapping name="indexid">indexid</mapping>
+			<mapping name="contenttext">contenttext</mapping>
+			<mapping name="articleclick">articleclick</mapping>
+			<mapping name="orderid">orderid</mapping>
+			<mapping name="ishotpaper">ishotpaper</mapping>
+			<mapping name="opencomment">opencomment</mapping>
+		</table>
+		<table oriname="CATALOG" tarname="CATALOG">
+			<!-- 映射，name为现数据表中的字段，值为源数据源中的字段，不需要映射的不需要配置 -->
+			<mapping name="id">id</mapping>
+			<mapping name="catacode">catacode</mapping>
+			<mapping name="name">name</mapping>
+			<mapping name="showtype">showtype</mapping>
+			<mapping name="remark">remark</mapping>
+			<mapping name="parentid">parentid</mapping>
+			<mapping name="type">type</mapping>
+			<mapping name="isshow">isshow</mapping>
+			<mapping name="orderid">orderid</mapping>
+		</table>
+	</tables>
+</config>
